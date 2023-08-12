@@ -4,8 +4,14 @@ const display = document.getElementById('display');
 display.value = 0;
 
 buttons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
         const buttonText = button.textContent;
+
+        button.classList.add('focus');
+
+        setTimeout(()=>{
+            button.classList.remove('focus')
+        },1000)
 
         if (buttonText === '=') {
             try {
